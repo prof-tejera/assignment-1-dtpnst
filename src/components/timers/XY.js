@@ -40,8 +40,8 @@ const XY = () => {
         setCurrentRound((prevRound) => prevRound +1);
     }
 
-    const handleEndTimeChange = (newEndTime) => {
-        setCoundownAmount(new Duration(newEndTime.hours, newEndTime.minutes, newEndTime.seconds));
+    const handleCountdownAmountChange = (newCountdownAmount) => {
+        setCoundownAmount(new Duration(newCountdownAmount.hours, newCountdownAmount.minutes, newCountdownAmount.seconds));
     };
 
     const handleNumRoundsChange = (newNumRounds) => {
@@ -72,8 +72,8 @@ const XY = () => {
         <Panel>
             <DisplayTime value={currentTime}/>
             <DisplayRounds value={currentRound}/>
-            <TimeInput label="Time Per Round" duration={countdownAmount} onTimeChange={handleEndTimeChange} />
-            <Input label="Number of Rounds" type="number" onChange={handleNumRoundsChange}/>
+            <TimeInput label="Time Per Round" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
+            <Input label="Number of Rounds" type="number" min="0"  onChange={handleNumRoundsChange}/>
             <br/>
             <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
             <Button text="Reset" onClick={handleResetClick}/>

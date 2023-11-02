@@ -12,6 +12,8 @@ const TimeInput = ({ label, duration, onTimeChange }) => {
         <label>{label}:</label>
         <input
           type="number"
+          min="0"
+          max="24"
           name="hours"
           value={duration.hours}
           onChange={handleInputChange}
@@ -19,6 +21,8 @@ const TimeInput = ({ label, duration, onTimeChange }) => {
         <span> hours</span>
         <input
           type="number"
+          min="0"
+          max="59"
           name="minutes"
           value={duration.minutes}
           onChange={handleInputChange}
@@ -26,6 +30,8 @@ const TimeInput = ({ label, duration, onTimeChange }) => {
         <span> minutes</span>
         <input
           type="number"
+          min="0"
+          max="59"
           name="seconds"
           value={duration.seconds}
           onChange={handleInputChange}

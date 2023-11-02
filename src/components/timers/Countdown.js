@@ -35,8 +35,8 @@ const Countdown = () => {
         setIsRunning(false);
     }
 
-    const handleEndTimeChange = (newEndTime) => {
-        setCoundownAmount(new Duration(newEndTime.hours, newEndTime.minutes, newEndTime.seconds));
+    const handleCountdownAmountChange = (newCountdownAmount) => {
+        setCoundownAmount(new Duration(newCountdownAmount.hours, newCountdownAmount.minutes, newCountdownAmount.seconds));
     };
 
     useEffect(() => {
@@ -59,7 +59,7 @@ const Countdown = () => {
     return (
         <Panel>
             <DisplayTime value={currentTime}/>
-            <TimeInput label="Timer Amouunt" duration={countdownAmount} onTimeChange={handleEndTimeChange} />
+            <TimeInput label="Timer Amouunt" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
             <br/>
             <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
             <Button text="Reset" onClick={handleResetClick}/>
