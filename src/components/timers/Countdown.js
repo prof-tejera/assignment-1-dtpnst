@@ -10,10 +10,20 @@ const Countdown = () => {
     const [currentTime, setCurrentTime] = useState(0); 
     const [countdownAmount, setCoundownAmount] = useState(new Duration(0, 0, 0)); 
     const [isRunning, setIsRunning] = useState(false);
+    const [isPaused, setIsPaused] = useState(false)
 
     const handleStartStopClick = () => {
+        
+        if(!isRunning && !isPaused) {
+            setCurrentTime(countdownAmount.getTotalSeconds());
+        }
+
+        if(isRunning) {
+            setIsPaused(true)
+        }
+        
         setIsRunning(!isRunning);
-        setCurrentTime(countdownAmount.getTotalSeconds());
+        
     }
 
     const handleResetClick = () => {
@@ -32,15 +42,15 @@ const Countdown = () => {
     useEffect(() => {
         let timerId;
         if (isRunning) {
-        if (currentTime > 0) {
-            timerId = setInterval(() => {
-                setCurrentTime((prevTime) => prevTime - 1); 
-            }, 1000);
+            if (currentTime > 0) {
+                timerId = setInterval(() => {
+                    setCurrentTime((prevTime) => prevTime - 1); 
+                }, 1000);
+            } else {
+                setIsRunning(false); 
+            }
         } else {
-            setIsRunning(false); 
-        }
-        } else {
-        clearInterval(timerId);
+            clearInterval(timerId);
         }
 
         return () => clearInterval(timerId);

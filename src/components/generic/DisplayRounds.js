@@ -1,3 +1,5 @@
+import React from "react";
+
 const DisplayRounds = ({ value }) => {
     return (
       <div
