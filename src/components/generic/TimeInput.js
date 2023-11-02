@@ -1,15 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TimeInput = ({ label, duration, onTimeChange }) => {
-    
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        const numericValue = value === '' ? 0 : parseInt(value, 10);
-        onTimeChange({ ...duration, [name]: isNaN(numericValue) ? 0 : numericValue });
-    };
-    
-    const TimeInputContainer = styled.div`
+const TimeInputContainer = styled.div`
       padding: 5px;
       span {
         font-size: 13px;
@@ -35,6 +27,16 @@ const TimeInput = ({ label, duration, onTimeChange }) => {
         font-size: 10px;
       }
     `;
+
+const TimeInput = ({ label, duration, onTimeChange }) => {
+    
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        const numericValue = value === '' ? 0 : parseInt(value, 10);
+        onTimeChange({ ...duration, [name]: isNaN(numericValue) ? 0 : numericValue });
+    };
+    
+    
 
 
     return (

@@ -40,9 +40,9 @@ const resetButtonStyle = {
     borderColor: "#ba3425",
 };
 
-const ButtonContainer = styled.div`
-    padding-left: 16px;
-`;
+const buttonContainerStyle = {
+  paddingLeft: "16px",
+}
 
 const TimerContainer = styled.div`
     background-color: #4f635d;
@@ -58,6 +58,7 @@ const TimerContainer = styled.div`
     border-bottom-right-radius: 100px;
 `;
 
+
 const Timer = ({
   currentTime,
   currentRound,
@@ -66,15 +67,18 @@ const Timer = ({
   handleFastForwardClick,
   isRunning,
 }) => {
+
+  
+
   return (
     <Panel>
         <TimerContainer>
             <DisplayTime value={currentTime} />
-            <ButtonContainer>
+            <div style={buttonContainerStyle}>
                 <FontAwesomeIcon icon={isRunning ? faPause : faPlay} style={buttonStyle} onClick={handleStartStopClick}/>
                 <FontAwesomeIcon icon={faRotateLeft} style={resetButtonStyle} onClick={handleResetClick}/>
                 <FontAwesomeIcon icon={faForward} style={buttonStyle} onClick={handleFastForwardClick} />
-            </ButtonContainer>
+            </div>
         </TimerContainer>
         {currentRound !== undefined && <DisplayRound value={currentRound} />}
     </Panel>
