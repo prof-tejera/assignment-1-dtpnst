@@ -59,7 +59,7 @@ const Countdown = () => {
     return (
         <Panel>
             <DisplayTime value={currentTime}/>
-            <TimeInput label="Timer Amouunt" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
+            <TimeInput label="Timer Amount" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
             <br/>
             <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
             <Button text="Reset" onClick={handleResetClick}/>

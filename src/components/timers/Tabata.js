@@ -70,7 +70,7 @@ const Tabata = () => {
               setCurrentTime(restTime.getTotalSeconds());
               setIsRest(true);
             }
-          } else if (currentRound == numRounds && !isRest) {
+          } else if (currentRound === numRounds && !isRest) {
             setCurrentTime(restTime.getTotalSeconds());
             setIsRest(true);
           } else {
