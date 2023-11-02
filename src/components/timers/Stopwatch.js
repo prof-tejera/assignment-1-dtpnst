@@ -1,10 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Panel from "../generic/Panel";
-import DisplayTime from "../generic/DisplayTime";
 import TimeInput from "../generic/TimeInput";
-import Button from "../generic/Button";
 import Duration from "../generic/Duration";
+import Timer from "../generic/Timer";
 
 const Stopwatch = () => {
 
@@ -50,12 +49,14 @@ const Stopwatch = () => {
 
     return (
         <Panel>
-            <DisplayTime value={currentTime}/>
-            <TimeInput label="End Time" duration={endTime} onTimeChange={handleEndTimeChange} />
-            <br/>
-            <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
-            <Button text="Reset" onClick={handleResetClick}/>
-            <Button text="Fast Forward" onClick={handleFastForwardClick}/>   
+            <Timer
+                currentTime={currentTime}
+                handleStartStopClick={handleStartStopClick}
+                handleResetClick={handleResetClick}
+                handleFastForwardClick={handleFastForwardClick}
+                isRunning={isRunning}
+            />
+            <TimeInput label="End Time" duration={endTime} onTimeChange={handleEndTimeChange} />   
         </Panel>
     );
 

@@ -1,12 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Panel from "../generic/Panel";
-import DisplayTime from "../generic/DisplayTime";
 import TimeInput from "../generic/TimeInput";
-import Button from "../generic/Button";
 import Duration from "../generic/Duration";
 import Input from "../generic/Input";
-import DisplayRounds from "../generic/DisplayRounds";
+import Timer from "../generic/Timer";
 
 const Tabata = () => {
     const [currentTime, setCurrentTime] = useState(0); 
@@ -85,15 +83,17 @@ const Tabata = () => {
 
     return (
         <Panel>
-            <DisplayTime value={currentTime}/>
-            <DisplayRounds value={currentRound}/>
+            <Timer
+                currentTime={currentTime}
+                currentRound={currentRound}
+                handleStartStopClick={handleStartStopClick}
+                handleResetClick={handleResetClick}
+                handleFastForwardClick={handleFastForwardClick}
+                isRunning={isRunning}
+            />
             <TimeInput label="Work Time" duration={workTime} onTimeChange={handleWorkTimeChange} />
             <TimeInput label="Rest Time" duration={restTime} onTimeChange={handleRestTimeChange} />
             <Input label="Number of Rounds" type="number" min="0" onChange={handleNumRoundsChange}/>
-            <br/>
-            <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
-            <Button text="Reset" onClick={handleResetClick}/>
-            <Button text="Fast Forward" onClick={handleFastForwardClick}/>   
         </Panel>
     );
 };

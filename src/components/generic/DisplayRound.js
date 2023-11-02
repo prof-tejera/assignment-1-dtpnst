@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayRounds = ({ value }) => {
+const DisplayRound = ({ value }) => {
     return (
       <div
         className="screen"
@@ -17,5 +17,5 @@ const DisplayRounds = ({ value }) => {
     );
   };
   
-  export default DisplayRounds;
+  export default DisplayRound;
   

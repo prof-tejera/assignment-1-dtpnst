@@ -1,10 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Panel from "../generic/Panel";
-import DisplayTime from "../generic/DisplayTime";
 import TimeInput from "../generic/TimeInput";
-import Button from "../generic/Button";
 import Duration from "../generic/Duration";
+import Timer from "../generic/Timer";
 
 const Countdown = () => {
     const [currentTime, setCurrentTime] = useState(0); 
@@ -58,12 +57,14 @@ const Countdown = () => {
 
     return (
         <Panel>
-            <DisplayTime value={currentTime}/>
+            <Timer
+                currentTime={currentTime}
+                handleStartStopClick={handleStartStopClick}
+                handleResetClick={handleResetClick}
+                handleFastForwardClick={handleFastForwardClick}
+                isRunning={isRunning}
+            />
             <TimeInput label="Timer Amount" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
-            <br/>
-            <Button text={isRunning ? "Stop" : "Start"} onClick={handleStartStopClick} />
-            <Button text="Reset" onClick={handleResetClick}/>
-            <Button text="Fast Forward" onClick={handleFastForwardClick}/>   
         </Panel>
     );
 };
