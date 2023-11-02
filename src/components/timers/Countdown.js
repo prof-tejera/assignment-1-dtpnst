@@ -64,7 +64,7 @@ const Countdown = () => {
                 handleFastForwardClick={handleFastForwardClick}
                 isRunning={isRunning}
             />
-            <TimeInput label="Timer Amount" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
+            <TimeInput label="Time" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
         </Panel>
     );
 };

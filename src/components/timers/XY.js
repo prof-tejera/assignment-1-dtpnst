@@ -77,7 +77,7 @@ const XY = () => {
                 isRunning={isRunning}
             />
             <TimeInput label="Time Per Round" duration={countdownAmount} onTimeChange={handleCountdownAmountChange} />
-            <Input label="Number of Rounds" type="number" min="0"  onChange={handleNumRoundsChange}/>  
+            <Input label="# of Rounds" type="number" min="0"  onChange={handleNumRoundsChange}/>  
         </Panel>
     );
 };

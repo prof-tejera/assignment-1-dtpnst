@@ -2,7 +2,7 @@ import React from "react";
 
 const DisplayRound = ({ value }) => {
     return (
-      <div class="round">
+      <div className="round">
         Round: {value}
       </div>
     );

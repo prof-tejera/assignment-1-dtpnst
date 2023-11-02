@@ -56,7 +56,7 @@ const Stopwatch = () => {
                 handleFastForwardClick={handleFastForwardClick}
                 isRunning={isRunning}
             />
-            <TimeInput label="End Time" duration={endTime} onTimeChange={handleEndTimeChange} />   
+            <TimeInput label="Time" duration={endTime} onTimeChange={handleEndTimeChange} />   
         </Panel>
     );
 

@@ -93,7 +93,7 @@ const Tabata = () => {
             />
             <TimeInput label="Work Time" duration={workTime} onTimeChange={handleWorkTimeChange} />
             <TimeInput label="Rest Time" duration={restTime} onTimeChange={handleRestTimeChange} />
-            <Input label="Number of Rounds" type="number" min="0" onChange={handleNumRoundsChange}/>
+            <Input label="# of Rounds" type="number" min="0" onChange={handleNumRoundsChange}/>
         </Panel>
     );
 };
