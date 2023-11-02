@@ -18,7 +18,6 @@ const Stopwatch = () => {
 
     const handleResetClick = () => {
         setCurrentTime(0);
-        setEndTime(new Duration(0, 0, 0));
     }
 
     const handleFastForwardClick = () => {
